@@ -1,0 +1,23 @@
+.btn{
+    &--connecter{
+        color: $blue;
+        background-color: $white;
+        padding: 7px 14px;
+        border: 0.8px solid $blue;
+        border-radius: 3px;
+    }
+    &--blue{
+        color: $white;
+        background-color: $blue;
+        padding: 7px 14px;
+        border: 0.8px solid transparent;
+        border-radius: 3px; 
+    }
+    &--large{
+        padding: 10px 0;
+        font-size: 18px;
+        font-weight: bold;
+        width: 100%; 
+
+    }
+}
