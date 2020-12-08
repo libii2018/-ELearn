@@ -1,0 +1,73 @@
+.header{
+    padding: 25px 30px;
+    box-shadow: 0px 1px 10px 0px $blacktran;
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a{
+            &:hover{
+                color: $blue;
+            }
+        }
+    }
+    &__left{
+        display: flex;
+        justify-content: space-around;
+    }
+    &__logo{
+        &:not(:last-child){
+            margin-right: 30px;
+        }
+    }
+    &__liens a{
+        &:not(:last-child){
+            margin-right: 30px;
+        }
+        &:hover{
+            color: $blue;
+        }
+    }
+}
+
+.hamburger__menu{
+display: none;
+    > span{
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: $black;
+
+        &:not(:last-child){
+            margin-bottom: 3px;
+        }
+    }
+}
+
+@media screen and (max-width: 425px){
+    .header{
+        &__categories{
+            display: none;
+        }
+        &__liens{
+            display: none;
+        }
+    }
+    .hamburger__menu{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .header{
+        &__categories{
+            display: none;
+        }
+        &__liens{
+            display: none;
+        }
+    }
+    .hamburger__menu{
+        display: block;
+    }
+}
