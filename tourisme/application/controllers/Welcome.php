@@ -4,18 +4,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller {
 
 	
-	public function login()
+	public function login($err = null)
 	{
-		$this->load->view('connection');
+		$data = array(); 
+		if(!empty($err)){
+			$data['message'] = "Veuillez vérifier vos données. Le mot de passe ou le nom d'utilisateur est incorrect"; 
+		}
+		$this->load->view('connection', $data);
 	}
 
-	public function sign_up($data = null)
-
+	public function sign_up($error = null)
 	{
-		if(isset($data)) {
-			var_dump($data); 
+		$data = array(); 
+		if(!empty($error)){
+			$data['message'] = "Veuillez remplir tous les champs correctement"; 
 		}
-		
 		$this->load->view('inscription', $data);
 	}
 

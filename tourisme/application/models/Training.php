@@ -7,7 +7,7 @@
  * @author          KalySo
  * @link            https://gitlab.com/KalySo
  */
-class User extends CI_Model
+class Training extends CI_Model
 {
     public $table_name = "user";
 
@@ -15,8 +15,11 @@ class User extends CI_Model
     {
     }
 
+    /**
+     * Ajouter une formation
+    */
 
-    public function sign_up($data)
+    public function add_training($data)
     {
         $this->db->set('Tel', $data['tel']);
 		$this->db->set('nom', $data['nom']);
@@ -28,20 +31,40 @@ class User extends CI_Model
         return $data; 
     }
 
-    public function login_user($data)
-    {
+   
+    /**
+     * Mettre à jour une formation  
+    */
 
-        $result = $this->db->select('*')->where('nom', $data["nom"])->where('password', $data["password"])->get($this->table_name);
-        $result = $result->row();
-
-        return $result;
-    }
-
-    public function update_user($data)
+    public function update_training($data)
     {
         $this->db->where('id_user', $data['id_user']);
         $this->db->update($this->table_name, $data);
 
     }
+
+    /**
+     *  SUpprimer une formation 
+    */
+
+    public function delete_training($data)
+    {
+        $this->db->where('id_user', $data['id_user']);
+        $this->db->update($this->table_name, $data);
+
+    }
+
+    /**
+     *  Lire une formation 
+    */
+
+    public function get_training($data)
+    {
+        $this->db->where('id_user', $data['id_user']);
+        $this->db->update($this->table_name, $data);
+
+    }
+
+
 
 }

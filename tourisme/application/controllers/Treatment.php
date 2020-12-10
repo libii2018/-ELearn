@@ -10,13 +10,13 @@ class Treatment extends CI_Controller {
         $res = $this->User->login_user($data); 
         if (!empty($res)){
             //ouvrir une session
-            var_dump($res); 
             $sess_array = array('name' =>$res->nom, 'id'=>$res->id_user, 'pass'=>$res->password);
             $this->session->set_userdata('user',$sess_array);
-            echo "Hello ".$data['nom']; 
+
         }
         else{
-            print_r('Erreur !') ; 
+            $err = "erreur"; 
+            redirect('Welcome/login/'.$err, "refresh");
         }
 
     }
@@ -26,31 +26,38 @@ class Treatment extends CI_Controller {
 	{
         $data  = $this->input->post(); 
 
+        var_dump($data); 
+
         $this->form_validation->set_rules('nom', '"Nom d\'utilisateur"', 'trim|required');
         $this->form_validation->set_rules('tel', '"Telephone"', 'trim|required');
         $this->form_validation->set_rules('Password', '"Le mail"', 'trim|required');
-        if ($this->form_validation->run() == false && $data['password'] != $data['password2']){
+        $this->form_validation->set_rules('gender', '"Sexe"', 'required');
+        if ($this->form_validation->run() == false && $data['password'] != $data['password2'] && empty($data['gender'])){
             //var_dump($data); 
-            $data['err']= "Veuillez remplir les champs correctement"; 
-            redirect('Welcome/sign_up', $data);
+            $err = "erreur"; 
+            redirect('Welcome/sign_up/'.$err, "refresh");
         }
         else{
 
-            $this->User->sign_up($data); 
-            print("Hello ".$data['nom']); 
+            $res = $this->User->sign_up($data); 
+            if(!empty($res)){
+                $sess_array = array('name' =>$res['nom'], 'id'=>$res['id_user'], 'pass'=>$res['password']);
+                $this->session->set_userdata('user',$sess_array);
+
+                redirect('Welcome/sign_up/', "refresh");
+
+            }
+           
+           
         }
         
+    }
+    
+    public function disconnect(){
+        $this->session->sess_destroy(); 
 
-        // Contrôle sur les données 
-        /**
-         * 1. Password 1 == password 2 
-         * 2. Tel contient juste des chiffres
-        */
-
-        // 
-		
-		
-	}
+        redirect('Welcome/login', "refresh"); 
+    }
 
 	
 
