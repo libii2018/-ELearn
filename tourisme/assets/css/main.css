@@ -164,4 +164,9 @@ a {
   color:  #0077b6 !important;
 }
 
+.form_error{
+  color : red ;
+  text-align: center; 
+}
+
 /*# sourceMappingURL=main.css.map */
