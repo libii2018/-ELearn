@@ -14,8 +14,26 @@
     &__left{
         display: flex;
         justify-content: space-around;
+        align-items: center;
+    }
+    &__left-containt{
+        display: none;
+    }
+    &__rigth{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        display: none;
+    }
+    &__rechercher{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        margin-left: 20px;
     }
     &__logo{
+        display: block;
         &:not(:last-child){
             margin-right: 30px;
         }
@@ -28,10 +46,24 @@
             color: $blue;
         }
     }
+    &__bar{
+        height: 18px;
+        width: 2px;
+        background-color: $black;
+        margin: 0 8px;
+    }
+    &__input{
+        padding: 0.68rem;
+        width: 350px;
+        font-size: 16px;
+    }
+    &__connexion{
+        padding-right: 20px;
+    }
 }
 
 .hamburger__menu{
-display: none;
+    justify-content: flex-end;
     > span{
         display: block;
         width: 30px;
@@ -58,16 +90,16 @@ display: none;
     }
 }
 
-@media screen and (max-width: 700px){
+@media screen and (min-width: 880px){
     .header{
-        &__categories{
-            display: none;
+        &__left-containt{
+            display: flex;
         }
-        &__liens{
-            display: none;
+        &__rigth{
+            display: flex;
         }
     }
     .hamburger__menu{
-        display: block;
+        display: none;
     }
 }
