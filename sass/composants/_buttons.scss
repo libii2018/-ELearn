@@ -15,6 +15,15 @@
         color: $white;
     }
 
+    &--banner{
+        font-size: 12px;
+        color: $white;
+        border: 0.8px solid $white;
+        display: inline-block;
+        background-color: transparent;
+
+    }
+
     &--explorer {
 
     }
@@ -46,6 +55,7 @@
         &--premiere{
             font-size: 12px;
         }
+        
     }
 }
 
@@ -69,6 +79,10 @@
     .btn{
         &--premiere{
             font-size: 17px;
+        }
+        &--banner{
+            font-size: 16px;
+    
         }
     }
 }
