@@ -9,7 +9,8 @@
  */
 class Training extends CI_Model
 {
-    public $table_name = "user";
+    protected $table_name = "formation";
+    protected $table_associated = "video"; 
 
     function _construct()
     {
@@ -55,15 +56,55 @@ class Training extends CI_Model
     }
 
     /**
-     *  Lire une formation 
+     * Retourner toutes les vidéos d'une formation
     */
 
-    public function get_training($data)
-    {
-        $this->db->where('id_user', $data['id_user']);
-        $this->db->update($this->table_name, $data);
+    public function get_training_video($id_formation){
 
+        $q = $this->db->select('*')->from($this->table_associated)->where('id_formation', $id_formation)->get(); 
+        return $q->result(); 
     }
+
+    /**
+     *  Lire une formation 
+    */
+    public function get_training_by_id($id)
+    {
+        $q = $this->db->select('*')->from($this->table_name)->where('id_formation', $id)->get(); 
+        return $q->result(); 
+        
+    }
+
+    /**
+     * Fonction pour compter le nombre de cours/vidéos d'une formation
+    */
+    public function num_vids_courses($id_formation){
+
+        $query = $this->db->select('*')->from($this->table_associated)->where('id_formation', $id_formation); 
+
+        return $query->count_all_results(); 
+    }
+
+    // Liste des formations et le num
+
+    public function get_training(){
+
+      //  $query = new stdClass(); 
+      $result = array(); 
+      $query =  $this->db->get($this->table_name);  
+      $q = $query->result(); 
+       foreach($q as $row){
+           $data = array(); 
+            $data['num'] = $this->num_vids_courses($row->id_formation); 
+            $data['formation'] = $row;
+            array_push($result, $data);
+       }
+        return $result; 
+    }
+
+    
+
+
 
 
 

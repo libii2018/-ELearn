@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller {
 
 	
-	public function login($err = null)
+	public function login($err = null) 
 	{
 		$data = array(); 
 		if(!empty($err)){
@@ -24,7 +24,26 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('Welcome_message');
+		$this->load->view('accueil.php');
+	}
+
+	public function formation(){
+
+		$data = array(); 
+
+		$data['formations'] = $this->Training->get_training();
+		$this->load->view('formation', $data); 
+	}
+
+
+	public function get_training_details($id){
+
+		$data = array(); 
+
+		$data['details'] = $this->Training->get_training_by_id($id); 
+		$data['vids'] = $this->Training->get_training_video($id); 
+
+		var_dump($data); 
 	}
 
 	

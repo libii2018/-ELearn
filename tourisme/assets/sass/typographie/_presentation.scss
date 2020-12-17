@@ -1,0 +1,73 @@
+.presentation{
+    font-size: 12px;
+    &__title{
+        line-height: 1.3;
+        text-align: justify;
+    }
+    &__text{
+        line-height: 1.5;
+        text-align: justify;
+    }
+    &__containt{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    &__card{
+        min-width: 320px;
+        min-height: 300px;
+        padding: 3rem;
+        
+    }
+    &__image{
+        min-width: 320px;
+        min-height: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+@media screen and (min-width: 740px){
+
+    .presentation{
+        font-size: 16px;
+        &__containt{
+            display: flex;
+            flex-direction: row;
+            &:nth-child(2n){
+                flex-direction: row-reverse;
+            }
+            &:not(:last-child){
+                padding-bottom: 2rem;
+            }
+        }
+        &__card{
+            width: 50%;
+            padding: 4rem;
+            
+        }
+        &__image{
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (min-width: 1050px){
+
+    .presentation{
+        padding: 0 5rem;
+        &__card{
+            padding: 4rem 4rem 4rem 0;
+            
+        }
+    }
+
+    .presentation__containt{
+        &:nth-child(2n){
+            .presentation__card{
+                padding: 4rem 0 4rem 4rem;
+            }
+        }
+    }
+}
+

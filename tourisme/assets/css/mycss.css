@@ -1,0 +1,17 @@
+.new_account{
+  font-size: 1em !important;
+}
+
+.new_account_link:hover{
+  text-decoration: underline !important; 
+  color:  #0077b6;
+}
+
+.new_account_link{
+  color:  #0077b6 !important;
+}
+
+.form_error{
+  color : red ;
+  text-align: center; 
+}
