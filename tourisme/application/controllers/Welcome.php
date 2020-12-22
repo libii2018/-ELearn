@@ -43,7 +43,9 @@ class Welcome extends CI_Controller {
 		$data['details'] = $this->Training->get_training_by_id($id); 
 		$data['vids'] = $this->Training->get_training_video($id); 
 
-		var_dump($data); 
+		//var_dump($data); 
+
+		$this->load->view('details_formation'); 
 	}
 
 	

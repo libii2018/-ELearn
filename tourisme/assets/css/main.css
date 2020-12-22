@@ -498,6 +498,66 @@ li {
     font-size: 16px;
   }
 }
+/**
+ Style for the training pages 
+**/
+.training_header_container {
+  background: url("../images/1.jpg");
+}
+
+.training_container {
+  padding-top: 6px;
+}
+
+.training_header {
+  margin-left: 7vh;
+  padding-top: 20px;
+  position: relative;
+}
+.training_header .p_details {
+  font-size: 16px;
+  color: #3c3b37;
+}
+.training_header .title {
+  color: #0077b6;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  width: 70%;
+}
+.training_header .link_price {
+  padding-bottom: 20px;
+  align-content: center;
+}
+
+.card_price {
+  position: relative;
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+  background: white;
+  margin-right: 8vh;
+  float: right;
+  bottom: 40vh;
+  width: 300px;
+  border-top: 12px solid #2a73cc;
+  padding: 20px;
+  text-align: center;
+}
+.card_price p {
+  line-height: 25px;
+}
+
+.training_link a {
+  color: #0077b6 !important;
+}
+.training_link a:hover {
+  text-decoration: underline !important;
+  cursor: pointer;
+  text-decoration-color: #0077b6;
+}
+
+.program_training {
+  margin-left: 7vh;
+}
+
 .footer {
   font-size: 14px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
