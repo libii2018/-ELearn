@@ -53,7 +53,7 @@ li {
   }
 }
 .header {
-  padding: 25px 30px;
+  padding: 0 30px;
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
 }
 .header .nav {
@@ -112,6 +112,60 @@ li {
   padding-right: 20px;
 }
 
+.explorer {
+  padding: 0;
+  margin: 0;
+}
+.explorer__tete-1:hover ul {
+  display: block !important;
+}
+.explorer__tete-1 i {
+  float: right;
+}
+.explorer__tete-1:hover i {
+  color: #0077b6;
+}
+.explorer__tete-1:hover a {
+  color: #0077b6;
+}
+.explorer__sous-1 {
+  margin-left: 138px !important;
+  margin-top: -51px !important;
+  display: none !important;
+}
+.explorer__sous-1 li a {
+  color: #000 !important;
+}
+.explorer__sous-1 li:hover a {
+  color: #0077b6 !important;
+}
+.explorer li {
+  padding: 30px 0;
+}
+.explorer li ul {
+  display: none;
+  position: absolute;
+  padding: 20px 0;
+  margin-top: 30px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 150px;
+}
+.explorer li ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+.explorer li ul li:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+.explorer li ul li:nth-last-child {
+  padding-bottom: 0 !important;
+}
+
+.explorer li:hover ul {
+  display: block;
+}
+
 .hamburger__menu {
   justify-content: flex-end;
 }
@@ -149,6 +203,11 @@ li {
     display: none;
   }
 }
+@media screen and (max-width: 880px) {
+  .header {
+    padding: 15px 30px;
+  }
+}
 .btn {
   font-size: 16px;
   color: #0077b6;
@@ -161,7 +220,10 @@ li {
 }
 .btn--inser {
   background-color: #0077b6;
-  color: #fff;
+  color: #fff !important;
+}
+.btn--inser:hover {
+  background-color: rgba(0, 119, 182, 0.8);
 }
 .btn--banner {
   font-size: 12px;
@@ -169,6 +231,9 @@ li {
   border: 0.8px solid #fff;
   display: inline-block;
   background-color: transparent;
+}
+.btn--explorer:hover .sub-explo {
+  display: block;
 }
 .btn--premiere {
   color: #fff;
@@ -189,6 +254,17 @@ li {
 .btn--fav-explore {
   margin-left: 8px;
   margin-top: 1px;
+}
+.btn--form {
+  margin-top: 30px;
+  background-color: #0077b6;
+  color: #fff;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+.btn--form:hover {
+  background-color: rgba(0, 119, 182, 0.8);
 }
 
 @media screen and (min-width: 321px) {
@@ -214,13 +290,16 @@ li {
     font-size: 16px;
   }
 }
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .form {
   width: 40%;
   min-width: 300px;
   height: auto;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: block;
   margin: 60px 0;
   padding: 40px;

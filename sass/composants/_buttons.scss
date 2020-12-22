@@ -12,7 +12,10 @@
 
     &--inser {
         background-color: $blue;
-        color: $white;
+        color: $white !important;
+        &:hover{
+            background-color: $bluetran;
+        }
     }
 
     &--banner{
@@ -25,7 +28,9 @@
     }
 
     &--explorer {
-
+        &:hover .sub-explo{
+            display: block;
+        }
     }
 
     &--premiere{
@@ -47,6 +52,18 @@
     &--fav-explore{
         margin-left: 8px;
         margin-top: 1px;
+    }
+
+    &--form{
+        margin-top: 30px;
+        background-color: $blue;
+        color: $white;
+        border: none;
+        width: 100%;
+        cursor: pointer;
+        &:hover{
+            background-color: $bluetran;
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 .header{
-    padding: 25px 30px;
+    padding: 0 30px;
     box-shadow: 0px 1px 10px 0px $blacktran;
     .nav{
         display: flex;
@@ -62,6 +62,73 @@
     }
 }
 
+.explorer{
+    padding: 0;
+    margin: 0;
+    &__tete-1{
+        &:hover ul{
+            display: block !important;
+        }
+        i {
+            float: right;
+        }
+        &:hover i{
+            color: $blue;
+        }
+        &:hover a{
+            color: $blue;
+        }
+    }
+    &__sous-1{
+        margin-left: 138px !important;
+        margin-top: -51px !important;
+        display: none !important;
+        
+        // display: block !important;
+        li{
+           a{
+            color: $black !important;
+           } 
+           &:hover a{
+                color: $blue !important;
+            }
+        }
+    }
+    li{
+        padding: 30px 0;
+        ul{
+            display: none;
+            // display: block;
+            position: absolute;
+            padding: 20px 0;
+            margin-top: 30px;
+            background-color: $white;
+            border: 1px solid $blacktran;
+            width: 150px;
+            li{
+                padding: 10px;
+                cursor: pointer;
+                // margin-bottom: 10px;
+                &:not(:last-of-type){
+                    margin-bottom: 5px;
+                }
+                &:nth-last-child{
+                    padding-bottom: 0 !important;
+                }
+            }
+        }
+    }
+}
+
+.explorer{
+    li{
+        // display: inline-block;
+        &:hover ul{
+            display: block;
+        }
+    }
+}
+
 .hamburger__menu{
     justify-content: flex-end;
     > span{
@@ -101,5 +168,11 @@
     }
     .hamburger__menu{
         display: none;
+    }
+}
+
+@media screen and (max-width: 880px){
+    .header{
+        padding: 15px 30px;
     }
 }
