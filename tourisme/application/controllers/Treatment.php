@@ -13,7 +13,10 @@ class Treatment extends CI_Controller {
             $sess_array = array('name' =>$res->nom, 'id'=>$res->id_user, 'pass'=>$res->password);
             $this->session->set_userdata('user',$sess_array);
 
+            redirect('Welcome', 'refresh'); 
+
         }
+
         else{
             $err = "erreur"; 
             redirect('Welcome/login/'.$err, "refresh");
@@ -44,7 +47,7 @@ class Treatment extends CI_Controller {
                 $sess_array = array('name' =>$res['nom'], 'id'=>$res['id_user'], 'pass'=>$res['password']);
                 $this->session->set_userdata('user',$sess_array);
 
-                redirect('Welcome/sign_up/', "refresh");
+                redirect('Welcome/index', "refresh");
 
             }
            
@@ -56,7 +59,7 @@ class Treatment extends CI_Controller {
     public function disconnect(){
         $this->session->sess_destroy(); 
 
-        redirect('Welcome/login', "refresh"); 
+        redirect('Welcome', "refresh"); 
     }
 
 	

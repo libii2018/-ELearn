@@ -102,6 +102,15 @@ class Training extends CI_Model
         return $result; 
     }
 
+
+    /**
+     *  Recherche
+    */
+    public function search($query){
+
+        $this->db->select('*')->like($query)->from($this->table_name); 
+    }
+
     
 
 

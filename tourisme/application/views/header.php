@@ -14,8 +14,8 @@
     <header class="header">
         <nav class="nav container">
             <div class="header__left">
-               <a href="#" class="header__logo">
-                    Logo
+               <a href="<?= site_url('Welcome')?>" class="header__logo">
+                   <img src="<?= base_url() .'assets/images/logo.jpg' ?>" alt="logo" class="header__img_logo">
                 </a>
                 <div class="header__left-containt">
                     <a href="#" class="btn btn--explore">Explore<i class="fas fa-angle-down btn--fav-explore"></i></a>
@@ -28,22 +28,25 @@
                 </div>
             </div>
             <div class="header__rigth">
-            <div class="header__connexion">
-                    <a href="<?= site_url('Welcome/login')?>" class="btn btn--con">Connexion</a>                        
-                </div>
-                <div class="header__inscription">
-                    <a href="<?= site_url('Welcome/sign_up')?>" class="btn btn--inser">Inscription</a>
-                </div>
                 <?php if (isset($_SESSION['user'])) : ?>
-                    <img src="http://placehold.it/18x18" class="profile-image img-circle"> <?= $_SESSION['user']['name'] ?> <b class="caret"></b></a>
-                    <div class="dropdown show">
+                    <div class="avatar_user">
+                        <img src="<?= base_url(). 'assets/images/avatar_male.svg' ?>" > 
+                        <span><?= $_SESSION['user']['name'] ?></span></a>
+                    </div>
+                    <div class="">
                         <a class="bondary dropdown-toggle" btn-secid="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="<?= site_url('Treatment/disconnect') ?>">Se déconnecter</a>
                         </div>
+                    </div>
+                <?php else : ?>
+                    <div class="header__connexion">
+                        <a href="<?= site_url('Welcome/login')?>" class="btn btn--con">Connexion</a>      
+                    </div>
+                    <div class="header__inscription">
+                        <a href="<?= site_url('Welcome/sign_up')?>" class="btn btn--inser">Inscription</a>
                     </div>
                 <?php endif;  ?>
             </div>

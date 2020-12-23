@@ -25,6 +25,11 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('accueil.php');
+
+		/**
+		 *  FOnction de recherche 
+		*/
+		
 	}
 
 	public function formation(){
@@ -47,6 +52,8 @@ class Welcome extends CI_Controller {
 
 		$this->load->view('details_formation'); 
 	}
+
+
 
 	
 }
