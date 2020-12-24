@@ -24,6 +24,11 @@
         border: 0.8px solid $white;
         display: inline-block;
         background-color: transparent;
+        transition: 1ms;
+        &:hover{
+            color: $black;
+            background-color: $white;
+        }
 
     }
 
@@ -40,6 +45,9 @@
         font-weight: 700px;
         border-radius: 3px;
         background-color: $blue;
+        &:hover{
+            background-color: $bluetran;
+        }
     }
     &--fav-search{
         position: absolute;
