@@ -9,10 +9,11 @@
             <?php if(!empty($formations)): ?>
                 <?php foreach($formations as $formation): ?>
                     <div class="card">
-                        <a href="<?= site_url('Welcome/get_training_details/'.$formation['formation']->id_formation) ?>"><div class="card__img" style="background-image: url('<?= $formation['formation']->img_cover_formation?>');"></div></a>
-                        <div class="card__footer">
+                        <?php $url = url_rename($formation['formation']->titre_formation)?>
+                        <a href="<?= site_url('Welcome/cours/'.$formation['formation']->id_formation).'/'. $url ?>"><div class="card__img" style="background-image: url('<?= $formation['formation']->img_cover_formation?>');"></div></a>
+                        <div class="card__infos">
                             <h2 class="card__title"><?= $formation['formation']->titre_formation ?></h2>
-                            <h2 class="card__title"><?= $formation['formation']->cout_formation ?> FCFA</h2>
+                            <h2 class="card__prix"><?= $formation['formation']->cout_formation ?> FCFA</h2>
                             <p class="card__infos"><?= $formation['num'] ?> cours • <?= $formation['formation']->date_publication?></p>
                         </div>
                     </div>

@@ -10,6 +10,7 @@
 class User extends CI_Model
 {
     public $table_name = "user";
+    public $comment_table = "commentaire"; 
 
     function _construct()
     {
@@ -42,6 +43,17 @@ class User extends CI_Model
         $this->db->where('id_user', $data['id_user']);
         $this->db->update($this->table_name, $data);
 
+    }
+
+
+    /**
+     * Get list of comments for a training
+    */
+    public function list_comments($id_training){
+        $result = $this->db->select('*')->where('id_formation', $id_training)->get($this->comment_table);
+        $result = $result->row();
+
+        return $result; 
     }
 
 }

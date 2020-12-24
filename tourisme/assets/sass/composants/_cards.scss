@@ -16,6 +16,10 @@
 
 .card{
     width: 100%;
+    border: 1px solid #eee;
+    margin: 10px; 
+    
+
     &__img{
         // width: 280px;
         width: 100%;
@@ -29,11 +33,20 @@
         font-size: 17px;
         font-weight: bold;
         margin: 0.5rem 0;
+        padding-left: 10px; 
     }
 
     &__infos{
         font-size: 13px;
         margin: 0.5rem 0;
+        padding-left: 10px; 
+    }
+
+    &__prix{
+        font-size: 20px;
+        margin: 0.5rem 0;
+        color: $blue;
+        padding-left: 10px;   
     }
 
     &--categorie{

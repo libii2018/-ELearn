@@ -41,16 +41,24 @@ class Welcome extends CI_Controller {
 	}
 
 
-	public function get_training_details($id){
+	public function cours(){
+
+		$id = $this->uri->segment(3); 
+		 
 
 		$data = array(); 
 
 		$data['details'] = $this->Training->get_training_by_id($id); 
-		$data['vids'] = $this->Training->get_training_video($id); 
+		$data['vids'] = $this->Training->get_training_video($id);
+		$data['comments'] = $this->User->list_comments($id); 
 
-		//var_dump($data); 
+		/*
+		@TODO : Faire une fonction pour le comptage de vids par formations
+		*/
 
-		$this->load->view('details_formation'); 
+		var_dump($data['comments']); 
+
+		$this->load->view('details_formation', $data); 
 	}
 
 

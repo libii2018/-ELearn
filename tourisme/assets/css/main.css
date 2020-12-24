@@ -277,6 +277,8 @@ li {
 
 .card {
   width: 100%;
+  border: 1px solid #eee;
+  margin: 10px;
 }
 .card__img {
   width: 100%;
@@ -289,10 +291,18 @@ li {
   font-size: 17px;
   font-weight: bold;
   margin: 0.5rem 0;
+  padding-left: 10px;
 }
 .card__infos {
   font-size: 13px;
   margin: 0.5rem 0;
+  padding-left: 10px;
+}
+.card__prix {
+  font-size: 20px;
+  margin: 0.5rem 0;
+  color: #325975;
+  padding-left: 10px;
 }
 .card--categorie {
   width: 230px;
@@ -605,7 +615,6 @@ li {
   margin: 0.5rem 0 1rem 0;
   background-color: #fff;
   -webkit-transition: -webkit-box-shadow 0.25s;
-  transition: -webkit-box-shadow 0.25s;
   transition: box-shadow 0.25s;
   transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
   border-radius: 2px;
@@ -645,6 +654,24 @@ li {
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+}
+
+/**
+    Style on the list of training pages
+**/
+.cards_training {
+  position: relative;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
 }
 
 .footer {

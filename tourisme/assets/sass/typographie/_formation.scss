@@ -117,11 +117,10 @@
         margin: .5rem 0 1rem 0;
         background-color: #fff;
         -webkit-transition: -webkit-box-shadow .25s;
-        transition: -webkit-box-shadow .25s;
         transition: box-shadow .25s;
         transition: box-shadow .25s, -webkit-box-shadow .25s;
         border-radius: 2px; 
-       box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2); 
+        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2); 
         text-align: center;
         padding: 10px; 
 
@@ -130,7 +129,6 @@
             font-size: 1.5em; 
         }
     }
-
    
 }
 
@@ -174,3 +172,22 @@
 }
 
 
+
+/**
+    Style on the list of training pages
+**/
+.cards_training{
+    position: relative;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+
+}
