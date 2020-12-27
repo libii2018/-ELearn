@@ -1,0 +1,143 @@
+.cours{
+    &__title{
+        padding: 10px;
+        color: $bluetran;
+       
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &__content {
+        display: flex; 
+        flex-direction: column;
+
+        @media screen and (min-width: 720px) {
+             flex-direction: row    ;
+        }
+    }
+    
+    &__video {
+        width: 100%;
+        @media screen and (min-width: 720px) {
+            width: 75%;
+            height: 350px;
+        }
+        video {
+            background-color: black;
+        }
+
+
+    }
+
+    &__suivie {
+        overflow-y: scroll;
+        width: 100%;
+        @media screen and (min-width: 720px) {
+            width: 25%;
+            height: 350px;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 25px;
+        height: auto;
+        // border-bottom: 1px solid $blacktran2;
+        transition: .27s all;
+        &:hover, &:focus {
+            background-color: $bluetran;
+            opacity: .9;
+        }
+
+        &--image {
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        &--text {
+            font-weight: bold;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        &--icon {
+            // margin-bottom: 10px;
+            i {
+                display: inline-block;
+                color: $blue;
+            }
+        }
+    }
+
+    &__timeline {
+        padding: 20px;
+        overflow-y: scroll;
+        width: 100%;
+        @media screen and (min-width: 720px) {
+            width: 25%;
+            height: 350px;
+        }
+    }
+     
+    &__item {
+        display: flex;
+        flex-direction: rows;
+        align-items: center;
+        // justify-content: space-between;
+
+
+
+        &--number {
+            // width: 40%;
+            position: relative;
+            // text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $white;
+            border: 1px solid $blacktran;
+            margin-bottom: 24px;
+
+            &::before {
+                content: '';
+                width: 90%;
+                height: 10%;
+                position: absolute;
+                left: 100%;
+                background-color: $blacktran2;
+            }
+
+            
+
+            
+            
+        }
+
+        &--title {
+            margin-left: 45px;
+            margin-bottom: 22px;
+        }
+
+    }
+
+}
+
+.cours__item:not(:last-child) {
+    .cours__item--number::after{
+        content: '';
+        height: 70%;
+        width: 10%;
+        position: absolute;
+        top: 100%;
+        background-color: $blacktran2;   
+    }
+}

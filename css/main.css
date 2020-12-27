@@ -623,7 +623,7 @@ li {
 }
 .services__body {
   margin: 20px 0;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.8);
 }
 .services__link {
   display: inline-block;
@@ -739,6 +739,121 @@ li {
     padding-left: 44px;
     padding-right: 44px;
   }
+}
+.cours__title {
+  padding: 10px;
+  color: rgba(0, 119, 182, 0.8);
+}
+.cours__title h2 {
+  margin: 0;
+  padding: 0;
+}
+.cours__content {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 720px) {
+  .cours__content {
+    flex-direction: row;
+  }
+}
+.cours__video {
+  width: 100%;
+}
+@media screen and (min-width: 720px) {
+  .cours__video {
+    width: 75%;
+    height: 350px;
+  }
+}
+.cours__video video {
+  background-color: black;
+}
+.cours__suivie {
+  overflow-y: scroll;
+  width: 100%;
+}
+@media screen and (min-width: 720px) {
+  .cours__suivie {
+    width: 25%;
+    height: 350px;
+  }
+}
+.cours__card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 25px;
+  height: auto;
+  transition: 0.27s all;
+}
+.cours__card:hover, .cours__card:focus {
+  background-color: rgba(0, 119, 182, 0.8);
+  opacity: 0.9;
+}
+.cours__card--image {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.cours__card--text {
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.cours__card--icon i {
+  display: inline-block;
+  color: #0077b6;
+}
+.cours__timeline {
+  padding: 20px;
+  overflow-y: scroll;
+  width: 100%;
+}
+@media screen and (min-width: 720px) {
+  .cours__timeline {
+    width: 25%;
+    height: 350px;
+  }
+}
+.cours__item {
+  display: flex;
+  flex-direction: rows;
+  align-items: center;
+}
+.cours__item--number {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 24px;
+}
+.cours__item--number::before {
+  content: "";
+  width: 90%;
+  height: 10%;
+  position: absolute;
+  left: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.cours__item--title {
+  margin-left: 45px;
+  margin-bottom: 22px;
+}
+
+.cours__item:not(:last-child) .cours__item--number::after {
+  content: "";
+  height: 70%;
+  width: 10%;
+  position: absolute;
+  top: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /*# sourceMappingURL=main.css.map */
